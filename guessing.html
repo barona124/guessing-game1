@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Tag Guessing Game</title>
+  <style>
+.btn {
+border: none;
+border-radius: 5px;
+padding: 12px 20px;
+font-size: 16px;
+cursor: pointer;
+background-color: brown;
+color: white;
+position: relative;
+}
+
+    /* Optional: Add some basic styling */
+    body {
+background-image:url("https://img.freepik.com/premium-photo/abstract-background-images-wallpaper-ai-generated_643360-68565.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699315200&semt=ais");
+background-size:cover;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>HTML Tag Guessing Game</h1>
+  <p>Guess the HTML tag based on the hints given below.</p>
+<p id="score"></p>
+  
+  <div id="game">
+    <p>Hint: It represents a paragraph.</p>
+    <label for="tagInput">Your guess:</label>
+    <input type="text" id="tagInput">
+    <button class="btn" onclick="checkGuess()">Check</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+var score = 0;
+    function checkGuess() {
+score = score+1;
+document.getElementById('score').innerHtml = score
+      // Get the user's input
+      var userGuess = document.getElementById('tagInput').value.toLowerCase();
+      
+      // Check if the guess is correct
+      if (userGuess === 'p') {
+        document.getElementById('result').textContent = 'Congratulations! You guessed it right.';
+      } else {
+        document.getElementById('result').textContent = 'Try again. Hint: It represents a paragraph.';
+      }
+    }
+  </script>
+</body>
+</html>
